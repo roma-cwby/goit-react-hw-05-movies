@@ -20,7 +20,7 @@ export const MovieDetails = () => {
     }
 
     fetchId();
-  }, [info]);
+  }, [info, movieId]);
 
   if (info.length < 1) return null;
 
