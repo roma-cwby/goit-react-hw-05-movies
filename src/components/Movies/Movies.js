@@ -1,9 +1,9 @@
-import { Link } from 'react-router-dom';
+import { BackBtn } from 'components/App/App.styled';
 
 export const Movies = () => {
   return (
     <div style={{ padding: '0 20px' }}>
-      <Link to="/">Go Back</Link>
+      <BackBtn to="/">Go Back</BackBtn>
       <input type="text"></input>
       <button type="submit">Search</button>
     </div>

@@ -18,7 +18,7 @@ export const Home = () => {
       }
     }
     getMoviesList();
-  }, [popularList]);
+  }, []);
   return (
     <HomeList>
       {popularList.length > 0 &&

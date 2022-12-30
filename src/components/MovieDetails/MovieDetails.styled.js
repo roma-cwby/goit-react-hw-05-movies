@@ -28,7 +28,16 @@ export const MovieInfo = styled.div`
 export const MoreInfo = styled.div`
   border-bottom: 1px solid black;
 
+  padding: 20px 0;
+
   a {
     display: block;
+    transition: color 200ms linear;
+    margin-top: 10px;
+
+    :hover,
+    :focus {
+      color: red;
+    }
   }
 `;

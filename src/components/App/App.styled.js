@@ -34,3 +34,17 @@ export const HeaderLink = styled(NavLink)`
     color: red;
   }
 `;
+
+export const BackBtn = styled(NavLink)`
+  padding: 5px 10px;
+
+  border-radius: 5px;
+  border: 1px solid black;
+  transition: color 200ms linear, border-color 200ms linear;
+
+  :hover,
+  :focus {
+    color: red;
+    border-color: red;
+  }
+`;
