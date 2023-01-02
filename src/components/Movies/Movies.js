@@ -13,20 +13,20 @@ const Movies = () => {
 
   const location = useLocation();
 
-  async function getData() {
-    if (query)
-      try {
-        const data = await getFilmsByName(query);
-        setSearchList(data);
-        if (!data?.length) throw new Error();
-      } catch (e) {
-        alert(`Error`);
-      }
-  }
-
   useEffect(() => {
+    async function getData() {
+      if (query)
+        try {
+          const data = await getFilmsByName(query);
+          setSearchList(data);
+          if (!data?.length) throw new Error();
+        } catch (e) {
+          alert(`Error`);
+        }
+    }
+
     getData();
-  }, [query, getData]);
+  }, [query]);
 
   return (
     <MoviesSearch>
@@ -36,7 +36,7 @@ const Movies = () => {
           onChange={e => setSearchParams({ q: e.target.value })}
           value={query && query}
         ></input>
-        <button type="submit" onClick={getData}>
+        <button type="submit" onClick={() => (query = seachParams.get('q'))}>
           Search
         </button>
       </div>
