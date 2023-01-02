@@ -28,7 +28,7 @@ const MovieDetails = () => {
 
   return (
     <div style={{ padding: '10px 20px' }}>
-      <BackBtn to={location.state?.from ?? '/'}>Go Back</BackBtn>
+      <BackBtn to={location.state?.from || '/'}>Go Back</BackBtn>
       <MovieInfo>
         <img src={BASE_IMG_URL + info.poster_path} alt={info.title} />
         <div>
@@ -44,8 +44,12 @@ const MovieDetails = () => {
       </MovieInfo>
       <MoreInfo>
         <h3>Additional information</h3>
-        <Link to="cast">Cast</Link>
-        <Link to="reviews">Reviews</Link>
+        <Link to="cast" state={{ from: location.state.from }}>
+          Cast
+        </Link>
+        <Link to="reviews" state={{ from: location.state.from }}>
+          Reviews
+        </Link>
       </MoreInfo>
       <Outlet />
     </div>
