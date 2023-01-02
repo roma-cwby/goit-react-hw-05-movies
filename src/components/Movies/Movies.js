@@ -9,7 +9,7 @@ const BASE_IMG_URL = 'https://image.tmdb.org/t/p/w500/';
 const Movies = () => {
   const [seachParams, setSearchParams] = useSearchParams();
   const [searchList, setSearchList] = useState([]);
-  const query = seachParams.get('q') ? seachParams.get('q') : '';
+  let query = seachParams.get('q') ? seachParams.get('q') : '';
 
   const location = useLocation();
 
