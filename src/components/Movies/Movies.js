@@ -26,7 +26,7 @@ const Movies = () => {
 
   useEffect(() => {
     getData();
-  }, [query]);
+  }, [query, getData]);
 
   return (
     <MoviesSearch>
