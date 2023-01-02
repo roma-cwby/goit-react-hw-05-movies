@@ -26,7 +26,7 @@ export function getFilmReviews(id) {
 }
 
 export function getFilmsByName(name) {
-  return fetch(`${BASE_URL}search/movie/?query=${name}&api_key=${API_KEY}`)
+  return fetch(`${BASE_URL}search/movie?query=${name}&api_key=${API_KEY}`)
     .then(res => res.json())
     .then(data => data.results);
 }
