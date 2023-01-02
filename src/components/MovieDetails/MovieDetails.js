@@ -27,30 +27,28 @@ const MovieDetails = () => {
   if (info.length < 1) return null;
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <div style={{ padding: '10px 20px' }}>
-        <BackBtn to={location.state?.from ?? '/'}>Go Back</BackBtn>
-        <MovieInfo>
-          <img src={BASE_IMG_URL + info.poster_path} alt={info.title} />
-          <div>
-            <h2>{info.title + ' (' + info.release_date.slice(0, 4) + ')'}</h2>
-            <p>Popularity: {info.popularity}</p>
-            <h3>Overview</h3>
-            <p>{info.overview}</p>
-            <h3>Genres</h3>
-            <p>
-              {info.genres.reduce((acc, genre) => acc + ` ${genre.name}`, '')}
-            </p>
-          </div>
-        </MovieInfo>
-        <MoreInfo>
-          <h3>Additional information</h3>
-          <Link to="cast">Cast</Link>
-          <Link to="reviews">Reviews</Link>
-        </MoreInfo>
-        <Outlet />
-      </div>
-    </Suspense>
+    <div style={{ padding: '10px 20px' }}>
+      <BackBtn to={location.state?.from ?? '/'}>Go Back</BackBtn>
+      <MovieInfo>
+        <img src={BASE_IMG_URL + info.poster_path} alt={info.title} />
+        <div>
+          <h2>{info.title + ' (' + info.release_date.slice(0, 4) + ')'}</h2>
+          <p>Popularity: {info.popularity}</p>
+          <h3>Overview</h3>
+          <p>{info.overview}</p>
+          <h3>Genres</h3>
+          <p>
+            {info.genres.reduce((acc, genre) => acc + ` ${genre.name}`, '')}
+          </p>
+        </div>
+      </MovieInfo>
+      <MoreInfo>
+        <h3>Additional information</h3>
+        <Link to="cast">Cast</Link>
+        <Link to="reviews">Reviews</Link>
+      </MoreInfo>
+      <Outlet />
+    </div>
   );
 };
 
