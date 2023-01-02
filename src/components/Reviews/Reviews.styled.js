@@ -8,7 +8,7 @@ export const ReviewsList = styled.ul`
     padding: 10px 0;
     border-bottom: 1px solid black;
 
-    h3 {
+    h3git {
       margin-bottom: 10px;
     }
   }

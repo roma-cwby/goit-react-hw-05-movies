@@ -1,6 +1,6 @@
 import { useParams, Link, Outlet, useLocation } from 'react-router-dom';
 import { getFilmById } from 'api';
-import { useEffect, useState, Suspense } from 'react';
+import { useEffect, useState } from 'react';
 import { MoreInfo, MovieInfo } from './MovieDetails.styled';
 import { BackBtn } from 'components/App/App.styled';
 
